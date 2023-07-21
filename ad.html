@@ -1,0 +1,114 @@
+<html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .ad-container {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+      }
+      .ad-container img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      .ad-container img.active {
+        opacity: 1;
+      }
+      .ad-container .controls {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+      }
+      .ad-container .controls button {
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 0px;
+        margin: 0px;
+        cursor: pointer;
+      }
+    </style>
+        <style>
+          /* 苹果官网风格的CSS代码 */
+          body {
+              font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+              background-color: #f5f5f5;
+              margin: 0;
+              padding: 0;
+          }
+          
+          .header {
+              background-color: #000;
+              color: #fff;
+              padding: 20px;
+              text-align: center;
+          }
+          
+          .content {
+              max-width: 800px;
+              margin: 0 auto;
+              padding: 20px;
+          }
+          
+          .content h1 {
+              font-size: 36px;
+              margin-bottom: 20px;
+          }
+          
+          .content p {
+              font-size: 18px;
+              line-height: 1.5;
+          }
+      </style>
+  </head>
+  <body>
+    <div class="ad-container">
+      <img src="ns.jpg" class="active">
+      <img src="hsd.jpg">
+      <img src="ads.jpg">
+      <div class="controls">
+        <button onclick="prevSlide()">&#10094;</button>
+        <button onclick="nextSlide()">&#10095;</button>
+      </div>
+    </div>
+    <script>
+      let slideIndex = 0;
+      const slides = document.querySelectorAll('.ad-container img');
+      const prevBtn = document.querySelector('.controls button:first-of-type');
+      const nextBtn = document.querySelector('.controls button:last-of-type');
+      
+      function showSlide() {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[slideIndex].classList.add('active');
+      }
+      
+      function nextSlide() {
+        slideIndex++;
+        if (slideIndex >= slides.length) {
+          slideIndex = 0;
+        }
+        showSlide();
+      }
+      
+      function prevSlide() {
+        slideIndex--;
+        if (slideIndex < 0) {
+          slideIndex = slides.length - 1;
+        }
+        showSlide();
+      }
+      
+      setInterval(() => {
+        nextSlide();
+      }, 5000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,373 @@
+﻿ <!DOCTYPE html>
+<head>
+  <script>// Add an event listener to the document object that listens for the "keydown" event
+  document.addEventListener("keydown", function(event) {
+    // Check if the key pressed is F12
+    if (event.key === "F12") {
+      // Redirect to neverf12.html
+      window.location.href = "neverf12.html";
+    }
+  });
+  
+  // Add an event listener to the document object that listens for the "mousedown" event
+  document.addEventListener("mousedown", function(event) {
+    // Check if the target of the event is an image or text
+    if (event.target.tagName === "IMG" || event.target.tagName === "P") {
+      // Add your desired functionality here for when an image or text is selected
+    }
+  });</script>
+<script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool@latest/disable-devtool.min.js"></script>
+  <title>易剪社官网</title>
+<link rel="icon" type="image/x-icon" href="yjs.ico">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-metro.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script> 
+  //防止拖动图片到桌面
+  document.addEventListener('dragstart', function(event) {
+      event.preventDefault();
+  });
+  
+  //禁止所有浏览器插件
+  window.addEventListener('load', function() {
+      if (typeof chrome !== 'undefined') {
+          chrome.webstore.install();
+      }
+      if (typeof InstallTrigger !== 'undefined') {
+          InstallTrigger.install();
+      }
+      if (typeof safari !== 'undefined') {
+          safari.extension.install();
+      }
+      if (typeof opera !== 'undefined') {
+          opera.addons.installExtension();
+      }
+      if (typeof navigator !== 'undefined' && typeof navigator.msSaveOrOpenBlob !== 'undefined') {
+          navigator.msSaveOrOpenBlob();
+      }
+  });
+  </script>
+<style>
+body {font-family: "Lato", sans-serif;}
+
+.tablink {
+  background-color: #111;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 50px;
+  text-align: center;
+}
+
+#YJS {background-color:#2f07f2;}
+#HSD {background-color:#06eacf;}
+#WL {background-color:#99ccff;}
+#DDDDD {background-color:orange;}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!======================================================>
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body Ondragstart="return false;" OncOntextmenu="return false;">
+
+<div id="YJS" class="tabcontent">
+  <h1>易剪社官网</h1>
+  <p>发现和创造生活中的美</p>
+</div>
+<div id="HSD" class="tabcontent">
+  <h1>HSD Studios</h1>
+  <p>用优质的程序灌溉世界</p> 
+</div>
+<div class="shadow p-4 mb-4 bg-white">
+
+<div id="WL" class="tabcontent">
+  <h1>蔚崃工作室（Nolai Studios） </h1>
+  <p>振兴中国科幻，你我同行</p>
+
+</div>
+
+<div id="DDDDD" class="tabcontent">
+  <h1>子琪剪辑工作室</h1>
+  <p>让剪辑成为快乐的一部分</p>
+</div>
+
+<button class="tablink" onclick="openCity('YJS', this, '#2f07f2')" id="defaultOpen">易剪社</button>
+<button class="tablink" onclick="openCity('HSD', this, '#06eacf')">HSD Studios</button>
+<button class="tablink" onclick="openCity('WL', this, '#99ccff')">蔚崃工作室</button>
+<button class="tablink" onclick="openCity('DDDDD', this, 'orange')">子琪剪辑工作室</button>
+
+<script>
+function openCity(cityName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(cityName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+<br><br><br>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>剪辑！</h3>
+      <p style="font-family:arial;color:black;">  1、这里是创造视频的天地</p>
+      <p>你可以在易剪社学习和交流Videostar，<a href="https://www.capcut.cn/" target="_blank">剪映</a>，AE等技术和学习方法！</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>拍摄！</h3>
+      <p style="font-family:arial;color:black;">  2、这里是学习拍摄的乐园</p>
+      <p>收集素材也是很重要的！欢迎爱拍摄的小伙伴！你们也是剪辑的重要一员！</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>编程！</h3>        
+      <p style="font-family:arial;color:black;">  3、这里是编程的极乐世界</p>
+      <p>跟着HSD Studios学习编程！HSD Studios主要学习交流编程！无论是Scratch，Python还是C++，甚至是PHP！</p>
+</div>
+<br>
+<!Created by HSD Studios>
+	<div class="col-sm-4">
+<h3>公众号！</h3>        
+     <p style="font-family:arial;color:black;">  4、这里是制作公众号的口袋宇宙</p>
+      <p>与蔚崃工作室一起学习<a href="https://mp.weixin.qq.com/" target="_blank">公众号的制作</a>，一起来建设优质的公众号吧！</p>
+</div>
+  <div class="col-sm-4">
+<h3>配音！</h3>        
+     <p style="font-family:arial;color:black;">  5、配音也是必不可少的</p>
+      <p>好的视频也要有好的配音员！一起来构建更加完美的，优质的视频吧！</p>
+</div>
+<div class="col-sm-4">
+<h3>UI设计！</h3>        
+     <p style="font-family:arial;color:black;">  6、人机交互界面也很重要</p>
+      <p>好的视频和程序应该建立在优质的UI之上！和HSD Studios一起交流方法！</p>
+</div>
+<!============================================================>
+
+
+
+
+</div>
+</div>
+<p>
+<center>
+<br><br><br>
+<!以空行来代替分割线（doge） >
+<h1>易剪社主要工作室介绍</h1>
+</center>
+</p>
+<p>
+<br>
+<div class="shadow p-4 mb-4 bg-white">
+<h2>HSD Studios</h2>
+<BR>
+<p>HSD Studios 的意思是 "High Success Dynamic"（高成功率，高动力）</p>
+<p>你能在这里学习编程，GUI，视频剪辑等等等等！</p>
+<p>HSD Studios means "High Success Dynamic" </p>
+<p>You can learn codes , GUI , video clips and more and more！</p>
+</div>
+<BR>
+<div class="shadow p-4 mb-4 bg-white">
+<h2>蔚崃工作室</h2>
+<BR>
+<p>Nolai Studios与你共文学！共程序！</p>
+<p>蔚崃工作室可以教你视频旁白的撰写！公众号的制作！还有视频剪辑！欢迎加入！</p>
+<p>Nolai Studios is writing with you! Total program! </p>
+<p>Nio Studio can teach you how to write video narration! The production of public number! And video clips!Welcome!</p>
+</div>
+<div class="shadow p-4 mb-4 bg-white">
+<h2>子琪剪辑工作室</h2>
+<BR>
+<p>专业剪辑视频，</p>
+<p>videostar接单。</p>
+<p>子琪剪辑工作室等你加入！！！</p>
+<p>We are good at editing video!We make money using VideoStar.The ZiQi Editing Studio welcome you join!</p>
+</div>
+<p>
+<br><br>
+<!万能的空行分割线（doge ）>
+</p>
+
+<center>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">返回顶部</a>
+  <a href="WHATIS.html" target="_blank">关于易剪社</a>
+  <a href="Video.mp4" target="_blank">易剪社宣传片</a>
+  <a href="YDGX.html" target="_blank">有待更新！</a>
+</div>
+
+<div id="main">
+  <h1>易剪社的其他</h1>
+  <h4>Other</h4>
+  <p>单击菜单按钮以使用菜单</p>
+<p>Click the menu button to use the menu</p>
+
+ <pre><pre><pre><pre><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+</center> 
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "190px";
+  document.getElementById("main").style.marginLeft = "190px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "white";
+}
+</script>
+<!果然，W3SCHOOLS才是最有用的，你说呢？>
+<p>
+<br>
+<br>
+<Br>
+</p>
+<div class="w3-container" style="background-color:black;color:white;">
+<br>
+<font _mstmutation="1" _msthash="155428" _msttexthash="242264893">
+<center>
+本网站由HSD Studios制作  This Web Page Created by HSD Studios.
+    未经许可，禁止搬运
+<br>
+鸣谢：W3schools （提供CSS库）
+</center>
+</font>
+<br>
+<br>
+</div>
+<script>
+//网站禁止选择文字
+    document.body.onselectstart = function() {
+    self.event.returnValue=false
+};
+</script>
+<script>
+	//按键触发
+document.onkeydown = function(){
+    //禁止 F12
+    if (window.event && window.event.keyCode == 123) {
+    event.keyCode = 0;
+    event.returnValue = false;
+    }
+    }
+</script>
+<script>
+	//按键触发
+document.onkeydown = function(){
+    //禁止ctrl+u
+    if (event.ctrlKey && window.event.keyCode==85){
+    return false;
+    }
+    }
+</script>
+<script>
+	//按键触发
+document.onkeydown = function(){
+	//禁止ctrl+s
+    if (event.ctrlKey && window.event.keyCode==83){
+    return false;
+    }
+    }
+</script>
+<script>
+    //网站禁止右键
+    document.body.oncontextmenu = function() {
+    self.event.returnValue=false
+};
+</script>
+<script>
+document.ondrop = function(event) {
+return false;
+};
+document.ondragenter  = function(event) {
+return false;
+};
+document.ondragover  = function(event) {
+return false;
+};
+
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!Doctype HTML>
+<html>
+<head> 
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="logo.png"> <!-- Changed the href to "bh.png" to display the correct icon -->
+    <script>// Add an event listener to the document object that listens for the "keydown" event
+    document.addEventListener("keydown", function(event) {
+      // Check if the key pressed is F12
+      if (event.key === "F12") {
+        // Redirect to neverf12.html
+        window.location.href = "neverf12.html";
+      }
+    });
+    
+    // Add an event listener to the document object that listens for the "mousedown" event
+    document.addEventListener("mousedown", function(event) {
+      // Check if the target of the event is an image or text
+      if (event.target.tagName === "IMG" || event.target.tagName === "P") {
+        // Add your desired functionality here for when an image or text is selected
+      }
+    });</script>
+<script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool@latest/disable-devtool.min.js"></script>
+<title>协议</title>
+</head>
+<body  Ondragstart="return false;" OncOntextmenu="return false;">
+<center>
+<img src="yhxy.png" width="85%">
+<img src="qxxbewm.png" width="41%">
+</center>
+</body>
+<script> 
+  //防止拖动图片到桌面
+  document.addEventListener('dragstart', function(event) {
+      event.preventDefault();
+  });
+  
+  //禁止所有浏览器插件
+  window.addEventListener('load', function() {
+      if (typeof chrome !== 'undefined') {
+          chrome.webstore.install();
+      }
+      if (typeof InstallTrigger !== 'undefined') {
+          InstallTrigger.install();
+      }
+      if (typeof safari !== 'undefined') {
+          safari.extension.install();
+      }
+      if (typeof opera !== 'undefined') {
+          opera.addons.installExtension();
+      }
+      if (typeof navigator !== 'undefined' && typeof navigator.msSaveOrOpenBlob !== 'undefined') {
+          navigator.msSaveOrOpenBlob();
+      }
+  });
+  </script>
+</html>

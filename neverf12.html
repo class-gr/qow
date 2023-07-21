@@ -1,0 +1,110 @@
+﻿<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+<link rel="icon" type="image/x-icon" href="bh.ico">
+<script> 
+// Disable right-click context menu
+document.addEventListener("contextmenu", function(event) {
+  event.preventDefault();
+});
+
+// Disable text and image selection
+document.addEventListener("selectstart", function(event) {
+  event.preventDefault();
+});
+</script>
+<script> 
+  //防止拖动图片到桌面
+  document.addEventListener('dragstart', function(event) {
+      event.preventDefault();
+  });
+  
+  //禁止所有浏览器插件
+  window.addEventListener('load', function() {
+      if (typeof chrome !== 'undefined') {
+          chrome.webstore.install();
+      }
+      if (typeof InstallTrigger !== 'undefined') {
+          InstallTrigger.install();
+      }
+      if (typeof safari !== 'undefined') {
+          safari.extension.install();
+      }
+      if (typeof opera !== 'undefined') {
+          opera.addons.installExtension();
+      }
+      if (typeof navigator !== 'undefined' && typeof navigator.msSaveOrOpenBlob !== 'undefined') {
+          navigator.msSaveOrOpenBlob();
+      }
+  });
+  </script>
+<script>// Add an event listener to the document object that listens for the "keydown" event
+document.addEventListener("keydown", function(event) {
+  // Check if the key pressed is F12
+  if (event.key === "F12") {
+    // Redirect to neverf12.html
+    window.location.href = "neverf12.html";
+  }
+});
+
+// Add an event listener to the document object that listens for the "mousedown" event
+document.addEventListener("mousedown", function(event) {
+  // Check if the target of the event is an image or text
+  if (event.target.tagName === "IMG" || event.target.tagName === "P") {
+    // Add your desired functionality here for when an image or text is selected
+  }
+});</script>
+<meta charset='utf-8'>
+
+
+
+
+</HEAD>
+<BODY>
+
+
+<CENTER>
+<div>
+<br>
+<H1>就你？想盗我们网站是吧？</H1><br>
+<! 我想骂人？唉……等等，你是怎么看到这行字的……？>
+<img src="doge.png">
+<br>
+<Br>
+</div>
+<div>
+<!cnmd>
+</div><div>
+<!cnmd>
+</div><div>
+<!cnmd>
+</div><div>
+<!cnmd>
+</div><div>
+<!cnmd>
+</div><div>
+<!cnmd>
+</div><div>
+<!cnmd>
+</div><div>
+<!cnmd>
+</div><div>
+<!cnmd>
+</div><div>
+<!cnmd>
+</div><div>
+<!cnmd>
+</div><div>
+<!cnmd>
+</div><div>
+<!cnmd>
+</div><div>
+<!cnmd>
+</div><div>
+<!cnmd>
+</div>
+
+
+</CENTER>
+</BODY>
+</HTML>

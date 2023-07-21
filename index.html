@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="logo.png"> <!-- Changed the href to "bh.png" to display the correct icon -->
+    <style>
+        body {
+            background-image: url('BG.webp');
+        }
+    </style>
+</head>
+<body>
+    <style>/* CSS script for text gradient effect */
+        @keyframes textGradient {
+          0% {
+            background-position: 0 0;
+          }
+          100% {
+            background-position: 100% 0;
+          }
+        }
+        
+        .gradient-text {
+          background-image: linear-gradient(to right, #f12711, #f5af19, #f5af19, #f12711);
+          background-size: 200% auto;
+          color: transparent;
+          -webkit-background-clip: text;
+          background-clip: text;
+          animation: textGradient 5s linear infinite;
+        }
+        </style>
+        <style>
+        /* CSS script for button style */
+          button {
+              background-color: rgb(0,128,255);
+              border-radius: 20px;
+              color: white;
+              font-size: 20px;
+              padding: 10px;
+              margin-top: 20px;
+          }
+        </style>
+        <center>
+        <h1>齐心学吧官网15.3.2</h1>
+        <h2>更多新料</h2>
+        <br />
+        <button onclick="window.location.href='introduce-sp.html'" color: white; border-radius: 5px; padding: 10px; font-size: 20px; margin-top: 20px;">继续了解</button>
+        </center>
+</body>
+</html>
