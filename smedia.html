@@ -1,14 +1,158 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>开发中</title>
+	<script src="hevc.js">
+	<script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"></script>
+	<link rel="stylesheet" href="font.css">
+	<link rel="shortcut icon" type="image/x-icon" href="logo.png">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>齐心流媒体</title>
+	<script src="protect.js"></script>
+    <style>
+        /* CSS 样式代码 */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+
+        #player {
+            position: fixed;
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            opacity: 0.7;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        video {
+            width: 100%;
+            height: 80%;
+            outline: none;
+        }
+
+        #controls {
+            display: flex;
+            width: 80%;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        button {
+            margin: 0 5px;
+            background-color: transparent;
+            border: none;
+            color: #000;
+            font-family: 钉钉进步体;
+            cursor: pointer;
+        }
+    </style>
 </head>
-<body background="error.jpg">
-    <center>
-    <br /><br />
-    <div style="font-family: 钉钉进步体;color:aliceblue">
-    <h1>该页面正在开发中，敬请期待！</h1>
-    <h3><a href="home.html">回到主页</a></h3>
-    </center>
+<body>
+    <div id="player">
+        <video id="myVideo" controls>
+            <source src="video.mp4" type="video/mp4">
+            <source src="video2.mp4" type="video/mp4">
+            <source src="video3.mp4" type="video/mp4">
+            <source src="video4.mp4" type="video/mp4">
+            <source src="video5.mp4" type="video/mp4">
+            <source src="video6.mp4" type="video/mp4">
+            <source src="video7.mp4" type="video/mp4">
+            <source src="video8.mp4" type="video/mp4">
+            <source src="video9.mp4" type="video/mp4">
+            <source src="video10.mp4" type="video/mp4">
+            <source src="video11.mp4" type="video/mp4">
+			<source src="video12.mp4" type="video/mp4">
+			<source src="video13.mp4" type="video/mp4">
+        </video>
+        <div id="controls">
+            <button onclick="previousVideo()"><img src="	https://cdn3.iconfinder.com/data/icons/feather-5/24/arrow-left-circle-64.png" width="20%">上一个</button>
+            <button onclick="rewindVideo()"><img src="https://cdn3.iconfinder.com/data/icons/feather-5/24/chevrons-left-64.png" width="20%">快退10秒</button>
+            <button onclick="togglePlay()">播放<img src="https://cdn3.iconfinder.com/data/icons/feather-5/24/play-circle-128.png" width="12%">暂停</button>
+            <button onclick="fastForwardVideo()">快进30秒<img src="https://cdn3.iconfinder.com/data/icons/feather-5/24/chevrons-right-64.png" width="20%"></button>
+            <button onclick="nextVideo()">下一个<img src="https://cdn3.iconfinder.com/data/icons/feather-5/24/arrow-right-circle-64.png" width="20%"></button>
+            <button onclick="togglePictureInPicture()">画中画<img src="https://cdn3.iconfinder.com/data/icons/feather-5/24/airplay-64.png" width="20%"></button>
+        </div>
+    </div>
+    <script src="protect.js"></script>
+	<script>
+		// 找到所有视频元素
+		var videoElements = document.querySelectorAll('video');
+		
+		// 遍历视频元素并隐藏下载按钮
+		videoElements.forEach(function(video) {
+		  video.controls = false;
+		})
+		
+		var video = document.getElementById("myVideo");
+		var videoList = ["video.mp4", "video2.mp4","video3.mp4","video4.mp4","video5.mp4","video6.mp4","video7.mp4","video8.mp4","video9.mp4","video10.mp4","video11.mp4","video12.mp4","video13.mp4"];
+		var currentVideoIndex = 0;
+		
+		function previousVideo() {
+		  currentVideoIndex--;
+		  if (currentVideoIndex < 0) {
+		    currentVideoIndex = videoList.length - 1;
+		  }
+		  video.src = videoList[currentVideoIndex];
+		  video.load();
+		  video.addEventListener('loadedmetadata', function() {
+		    video.currentTime = 0;
+		    video.play();
+		  });
+		}
+		
+		function rewindVideo() {
+		  video.currentTime -= 10;
+		}
+		
+		function togglePlay() {
+		  if (video.paused) {
+		    video.play();
+		  } else {
+		    video.pause();
+		  }
+		}
+		
+		function fastForwardVideo() {
+		  video.currentTime += 30;
+		}
+		
+		function nextVideo() {
+		  currentVideoIndex++;
+		  if (currentVideoIndex >= videoList.length) {
+		    currentVideoIndex = 0;
+		  }
+		  video.src = videoList[currentVideoIndex];
+		  video.load();
+		  video.addEventListener('loadedmetadata', function() {
+		    video.play();
+		  });
+		}
+		
+		function togglePictureInPicture() {
+		  if (document.pictureInPictureElement) {
+		    document.exitPictureInPicture();
+		  } else {
+		    video.requestPictureInPicture();
+		  }
+		}
+		
+		document.addEventListener("contextmenu", function(e) {
+		    e.preventDefault();
+		});
+	</script>
 </body>
 </html>

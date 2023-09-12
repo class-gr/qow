@@ -2,55 +2,66 @@
 <html>
 <head> 
     <meta charset="UTF-8">
+	<link rel="stylesheet" href="font.css">
     <link rel="shortcut icon" type="image/x-icon" href="logo.png"> <!-- Changed the href to "bh.png" to display the correct icon -->
-    <script>// Add an event listener to the document object that listens for the "keydown" event
-    document.addEventListener("keydown", function(event) {
-      // Check if the key pressed is F12
-      if (event.key === "F12") {
-        // Redirect to neverf12.html
-        window.location.href = "neverf12.html";
-      }
-    });
-    
-    // Add an event listener to the document object that listens for the "mousedown" event
-    document.addEventListener("mousedown", function(event) {
-      // Check if the target of the event is an image or text
-      if (event.target.tagName === "IMG" || event.target.tagName === "P") {
-        // Add your desired functionality here for when an image or text is selected
-      }
-    });</script>
 <script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool@latest/disable-devtool.min.js"></script>
+		<style>
+		    body {
+		        font-family: 钉钉进步体;
+		    }
+			
+			/* CSS script for button style */
+			  button {
+			      background-color: rgb(0,128,255);
+			      border-radius: 20px;
+			      color: white;
+			      font-size: 20px;
+			      padding: 10px;
+			      margin-top: 20px;
+			  }
+			  
+			  .fade-in {
+			          opacity: 0;
+			          animation: fadeIn ease-in 0.5s forwards;
+			        }
+			        
+			        @keyframes fadeIn {
+			          0% {
+			            opacity: 0.5;
+			          }
+			          100% {
+			            opacity: 1;
+			          }
+			        }
+			        
+			        img {
+			          animation: fadeIn ease-in 0.5s forwards;
+			        }
+			        
+			        .fade-in {
+			    opacity: 0.5; /* 初始透明度为50% */
+			    animation: fadeIn 1s; /* 使用动画效果，持续1秒 */
+			  }
+			  
+			  @keyframes fadeIn {
+			    0% {
+			      opacity: 0.5; /* 开始时透明度为50% */
+			    }
+			    100% {
+			      opacity: 1; /* 结束时透明度为100% */
+			    }
+			  }
+		</style>
 <title>协议</title>
 </head>
 <body  Ondragstart="return false;" OncOntextmenu="return false;">
 <center>
 <img src="yhxy.png" width="85%">
 <img src="qxxbewm.png" width="41%">
+<br /><br />
+<br /><br />
+		<button onclick="window.location.href='login.html'" color: white; border-radius: 5px; padding: 10px; font-size: 20px; margin-top: 20px;">我已阅读协议</button>
 </center>
 </body>
-<script> 
-  //防止拖动图片到桌面
-  document.addEventListener('dragstart', function(event) {
-      event.preventDefault();
-  });
-  
-  //禁止所有浏览器插件
-  window.addEventListener('load', function() {
-      if (typeof chrome !== 'undefined') {
-          chrome.webstore.install();
-      }
-      if (typeof InstallTrigger !== 'undefined') {
-          InstallTrigger.install();
-      }
-      if (typeof safari !== 'undefined') {
-          safari.extension.install();
-      }
-      if (typeof opera !== 'undefined') {
-          opera.addons.installExtension();
-      }
-      if (typeof navigator !== 'undefined' && typeof navigator.msSaveOrOpenBlob !== 'undefined') {
-          navigator.msSaveOrOpenBlob();
-      }
-  });
-  </script>
+<script src="protect.js"></script>
 </html>

@@ -1,58 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script>// Add an event listener to the document object that listens for the "keydown" event
-  document.addEventListener("keydown", function(event) {
-    // Check if the key pressed is F12
-    if (event.key === "F12") {
-      // Redirect to neverf12.html
-      window.location.href = "neverf12.html";
-    }
-  });
-  
-  // Add an event listener to the document object that listens for the "mousedown" event
-  document.addEventListener("mousedown", function(event) {
-    // Check if the target of the event is an image or text
-    if (event.target.tagName === "IMG" || event.target.tagName === "P") {
-      // Add your desired functionality here for when an image or text is selected
-    }
-  });</script>
-<style>
-  video::-internal-media-controls-download-button {
-    display:none;
-  }
-  video::-webkit-media-controls-enclosure {
-    overflow:hidden;
-  }
-  video::-webkit-media-controls-panel {
-    width: calc(100% + 30px); /* Adjust as needed */
-  }
-</style>
-<script> 
-  //防止拖动图片到桌面
-  document.addEventListener('dragstart', function(event) {
-      event.preventDefault();
-  });
-  
-  //禁止所有浏览器插件
-  window.addEventListener('load', function() {
-      if (typeof chrome !== 'undefined') {
-          chrome.webstore.install();
-      }
-      if (typeof InstallTrigger !== 'undefined') {
-          InstallTrigger.install();
-      }
-      if (typeof safari !== 'undefined') {
-          safari.extension.install();
-      }
-      if (typeof opera !== 'undefined') {
-          opera.addons.installExtension();
-      }
-      if (typeof navigator !== 'undefined' && typeof navigator.msSaveOrOpenBlob !== 'undefined') {
-          navigator.msSaveOrOpenBlob();
-      }
-  });
-  </script>
+  <script src="protect.js"></script>
   <script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool@latest/disable-devtool.min.js"></script>
 <title>易剪社宣传片</title>
 </head>
@@ -64,6 +13,15 @@
  $('#video1').bind('contextmenu',function() { return false; });
 </video>
 </center>
+	<script>
+		// 找到所有视频元素
+		var videoElements = document.querySelectorAll('video');
+		
+		// 遍历视频元素并隐藏下载按钮
+		videoElements.forEach(function(video) {
+		  video.controls = false;
+		});
+	</script>
 </div>
 </body>
 </html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<script src="protect.js"></script>
+        <link rel="stylesheet" href="font.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-metro.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+        <style>
+            a {
+            text-decoration: none;
+            border-bottom: none;
+          }
+          </style>
+          <script> 
+          // Disable right-click context menu
+          document.addEventListener("contextmenu", function(event) {
+            event.preventDefault();
+          });
+          
+          // Disable text and image selection
+          document.addEventListener("selectstart", function(event) {
+            event.preventDefault();
+          });
+          </script>
+          <script> 
+            //防止拖动图片到桌面
+            document.addEventListener('dragstart', function(event) {
+                event.preventDefault();
+            });
+            
+            //禁止所有浏览器插件
+            window.addEventListener('load', function() {
+                if (typeof chrome !== 'undefined') {
+                    chrome.webstore.install();
+                }
+                if (typeof InstallTrigger !== 'undefined') {
+                    InstallTrigger.install();
+                }
+                if (typeof safari !== 'undefined') {
+                    safari.extension.install();
+                }
+                if (typeof opera !== 'undefined') {
+                    opera.addons.installExtension();
+                }
+                if (typeof navigator !== 'undefined' && typeof navigator.msSaveOrOpenBlob !== 'undefined') {
+                    navigator.msSaveOrOpenBlob();
+                }
+            });
+            </script>
+          <script>// Add an event listener to the document object that listens for the "keydown" event
+          document.addEventListener("keydown", function(event) {
+            // Check if the key pressed is F12
+            if (event.key === "F12") {
+              // Redirect to neverf12.html
+              window.location.href = "neverf12.html";
+            }
+          });
+          
+          // Add an event listener to the document object that listens for the "mousedown" event
+          document.addEventListener("mousedown", function(event) {
+            // Check if the target of the event is an image or text
+            if (event.target.tagName === "IMG" || event.target.tagName === "P") {
+              // Add your desired functionality here for when an image or text is selected
+            }
+          });</script>
+          
+          <meta charset="utf-8">
+          <title>2022年的数学论文</title>
+    </head>
+    <body>
+		<center>
+        <br /><br />
+        <h1 style="font-family: 钉钉进步体;">熟悉的“十合一”————核酸检测中的数学问题</h1><br /><br />
+        <img src="SXYJ (1).png" width="60%"><br />
+        <img src="SXYJ (2).png" width="60%"><br />
+        <img src="SXYJ (3).png" width="60%" /><br />
+        <img src="SXYJ (4).png" width="60%" /><br />
+        <img src="SXYJ (5).png" width="60%" /><br />
+        <img src="SXYJ (6).png" width="60%" /><br />
+        <img src="SXYJ (7).png" width="60%" /><br />
+        <img src="SXYJ (8).png" width="60%" /><br />
+        <img src="SXYJ (9).png" width="60%" /><br />
+        <img src="SXYJ (10).png" width="60%" /><br />
+        <img src="SXYJ (11).png" width="60%" /><br />
+        <img src="SXYJ (12).png" width="60%" /><br />
+        <img src="SXYJ (13).png" width="60%" /><br />
+        <img src="SXYJ (14).png" width="60%" /><br />
+		</center>
+    </body>
+</html>
